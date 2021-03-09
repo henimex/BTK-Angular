@@ -1,6 +1,12 @@
 <!-- Header -->
 <h3 *ngIf="products; else noProducts">{{ title }}</h3>
 
+<!-- Ürün Arama Çubuğu -->
+<div class="mb-3">
+  <input class="form-control" id="productName" placeholder="Ürün İsmini Giriniz" [(ngModel)]="filterText">
+  <small *ngIf="filterText" id="ftext" class="form-text"> <strong>{{filterText}}</strong> aramanız ile ilgili tüm ürünler </small>
+</div>
+
 <div class="row">
 
   <!-- Empty List Of Products -->
@@ -11,12 +17,12 @@
   </ng-template>
 
   <!-- CardItem -->
-  <div *ngFor="let product of products" class="card" style="width: 18rem">
+  <div *ngFor="let product of products | productFilter:filterText" class="card" style="width: 18rem">
     <img src={{product.imageUrl}} height="250" width="120" class="card-img-top" alt="..."/>
     <div class="card-body">
-      <h5 class="card-title">{{product.name}}</h5>
-      <p class="card-text">{{product.description}}</p>
-      <a href="#" class="btn btn-primary">{{product.price}}</a>
+      <h5 class="card-title">{{product.name }} </h5>
+      <p class="card-text">{{product.description | lowercase}}</p>
+      <a href="#" class="btn btn-primary">{{product.price | currency: 'USD':true:'1.2-2'}}</a>
     </div>
   </div>
 </div>
