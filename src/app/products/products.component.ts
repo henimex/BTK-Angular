@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
+import {AlertifyService} from '../services/alertify.service'
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
+  //providers: [AlertifyService] // Compenent bazlı dependency Injection //Sepet Örnegi
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  //alertify servisini olusturdugumuzca cagrilacak yere injection yapılması gerekiyor
+  //bu injection olayı muhtemelen ilerleyen derslerde bir merkezden kontrol edilcek.
+
+  constructor(private alertifyService: AlertifyService) { }
   title:string = "Product List";
   filterText = ""
 
@@ -25,6 +30,12 @@ export class ProductsComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+  }
+
+  addToCart(product: Product){
+    //alert("Sepete Eklendi : "+ product.name + " \nFiyat : " + product.price);
+    //alertify.success("Sepete Eklendi : "+ product.name + " \nFiyat : " + product.price)
+    this.alertifyService.success("Sepete Eklendi : "+ product.name + " \nFiyat : " + product.price)
   }
 
 }

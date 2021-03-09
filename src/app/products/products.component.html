@@ -22,7 +22,7 @@
     <div class="card-body">
       <h5 class="card-title">{{product.name }} </h5>
       <p class="card-text">{{product.description | lowercase}}</p>
-      <a href="#" class="btn btn-primary">{{product.price | currency: 'USD':true:'1.2-2'}}</a>
+      <a (click)="addToCart(product)" class="btn btn-primary">{{product.price | currency: 'USD':true:'1.2-2'}}</a>
     </div>
   </div>
 </div>
