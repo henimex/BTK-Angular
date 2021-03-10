@@ -16,9 +16,9 @@
     </div>
   </ng-template>
 
-  <!-- CardItem -->
-  <div *ngFor="let product of products | productFilter:filterText" class="card" class="productbox" style="width: 18rem">
-    <img src={{product.imageUrl}} height="250" width="120" class="card-img-top" alt="..."/>
+  <!-- CardItem Image Size in CSS file-->
+  <div *ngFor="let product of products | productFilter:filterText" class="card" class="productbox" >
+    <img src={{product.imageUrl}} class="card-img-top" alt="..."/>
     <div class="card-body">
       <h5 class="card-title">{{product.name }} </h5>
       <p class="card-text">{{product.description | lowercase}}</p>
