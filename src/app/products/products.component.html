@@ -1,7 +1,7 @@
 <!-- Header -->
-<h3 *ngIf="products; else noProducts">{{ title }}</h3>
-
-<!-- Ürün Arama Çubuğu -->
+<!-- <h3 *ngIf="products; else noProducts">{{ title }}</h3> -->
+<app-category></app-category>
+<!-- Search Bar -->
 <div class="mb-3">
   <input class="form-control" id="productName" placeholder="Ürün İsmini Giriniz" [(ngModel)]="filterText">
   <small *ngIf="filterText" id="ftext" class="form-text"> <strong>{{filterText}}</strong> aramanız ile ilgili tüm ürünler </small>
@@ -17,7 +17,7 @@
   </ng-template>
 
   <!-- CardItem -->
-  <div *ngFor="let product of products | productFilter:filterText" class="card" style="width: 18rem">
+  <div *ngFor="let product of products | productFilter:filterText" class="card" class="productbox" style="width: 18rem">
     <img src={{product.imageUrl}} height="250" width="120" class="card-img-top" alt="..."/>
     <div class="card-body">
       <h5 class="card-title">{{product.name }} </h5>
