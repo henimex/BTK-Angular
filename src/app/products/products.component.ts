@@ -31,8 +31,6 @@ export class ProductsComponent implements OnInit {
       this.products = data
     });
     })
-
-
   }
 
   addToCart(product: Product) {
