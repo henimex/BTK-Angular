@@ -1,0 +1,38 @@
+<!-- Header -->
+<h3>Add New Product</h3>
+
+<!-- Form Area -->
+<form #productAddForm="ngForm" (ngSubmit)="add(productAddForm)">
+  <div class="form-group">
+    <input type="text" placeholder="Product Name" #name="ngModel" [(ngModel)]="model.name" class="form-control" name="name" id="name" required>
+    <div *ngIf ="name.invalid && name.dirty" class="alert alert-danger">Product Name Required</div>
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="Description" #description="ngModel" [(ngModel)]="model.description" class="form-control" name="description" id="description" required>
+    <div *ngIf ="description.invalid && description.dirty" class="alert alert-danger">Description must be filled</div>
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="Image" #imageUrl="ngModel" [(ngModel)]="model.imageUrl" class="form-control" name="imageUrl" id="imageUrl" required>
+    <div *ngIf ="imageUrl.invalid && imageUrl.dirty" class="alert alert-warning">Cannot Continue Without Image</div>
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="Price" #price="ngModel" [(ngModel)]="model.price" class="form-control" name="price" id="price" required>
+    <div *ngIf ="price.invalid && price.dirty" class="alert alert-danger">No Profit Without Price</div>
+  </div>
+
+  <!-- Combobox -->
+  <div class="form-group">
+    <select class="form-control" #categoryId="ngModel" [(ngModel)]="model.categoryId" name="categoryId" id="categoryId" required>
+      <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+    </select>
+    <div *ngIf ="categoryId.invalid && categoryId.touched" class="alert alert-danger">Please Select A Category</div>
+  </div>
+
+  <!-- Button and Small 2WayBinded Information -->
+  <button *ngIf="model.name" id="btnAdd" type="submit" class="btn btn-primary" [disabled]="productAddForm.invalid">Add {{model.name}}</button>
+  <small *ngIf="model.price" id="lblInfo" class="form-text"> Add <strong>{{model.name}}</strong> for <strong>{{model.price}} TL</strong> </small>
+
+
+
+
+</form>
