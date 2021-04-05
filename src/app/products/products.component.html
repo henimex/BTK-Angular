@@ -1,12 +1,14 @@
 <!-- Header -->
-<!-- <h3 *ngIf="products; else noProducts">{{ title }}</h3> -->
 <app-category></app-category>
 <!-- Search Bar -->
 <div class="mb-3">
   <input class="form-control" id="productName" placeholder="Ürün İsmini Giriniz" [(ngModel)]="filterText">
   <small *ngIf="filterText" id="ftext" class="form-text"> <strong>{{filterText}}</strong> aramanız ile ilgili tüm ürünler </small>
 </div>
-
+<h3 *ngIf="products; else noProducts">{{ title }}</h3>
+<div >
+  
+</div>
 <div class="row">
 
   <!-- Empty List Of Products -->
@@ -14,6 +16,12 @@
     <div class="alert alert-dark" role="alert">
       No products in this category
     </div>
+  </ng-template>
+
+  <ng-template #test>
+    <div>
+      template test icindeki div
+    </div> 
   </ng-template>
 
   <!-- CardItem Image Size in CSS file-->
