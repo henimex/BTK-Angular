@@ -13,6 +13,7 @@ import { ProductAddForms1Component } from './products/product-add-forms1/product
 import { ProductAddForms2Component } from './products/product-add-forms2/product-add-forms2.component';
 import { AlertifyService } from './services/alertify.service';
 import { CategoryAddComponent } from './category/category-add/category-add.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CategoryAddComponent } from './category/category-add/category-add.compo
     ProductAddForms1Component,
     ProductAddForms2Component,
     CategoryAddComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
