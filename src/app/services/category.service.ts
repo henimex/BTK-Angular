@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Category } from '../category/category';
 import { tap, catchError } from 'rxjs/operators';
@@ -26,4 +26,18 @@ export class CategoryService {
     }
     return throwError(errorMessage);
   }
+
+  addCategory(category: Category): Observable<Category>{
+    const httpOptions = {
+      headers:new HttpHeaders({
+        'ContentType':'application/json',
+        'Authorization':'Token'
+      })
+    }
+    return this.http.post<Category>(this.path,category,httpOptions).pipe(
+      tap(data => console.log("5 Category Loglama")),
+      catchError(this.handleError)
+    )
+  }
+
 }

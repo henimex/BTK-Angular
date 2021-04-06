@@ -29,8 +29,8 @@
     <img src={{product.imageUrl}} class="card-img-top" alt="..."/>
     <div class="card-body">
       <h5 class="card-title">{{product.name }} </h5>
-      <p class="card-text">{{product.description | lowercase}}</p>
-      <a (click)="addToCart(product)" class="btn btn-primary">{{product.price | currency: 'USD':true:'1.2-2'}}</a>
+      <p class="card-text">{{product.description}}</p>
+      <a (click)="addToCart(product)" class="btn btn-primary">{{product.price | currency: 'TRY':'symbol-narrow':'1.2-2'}}</a>
     </div>
   </div>
 </div>

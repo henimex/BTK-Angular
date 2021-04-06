@@ -1,1 +1,40 @@
-<p>product-add-forms2 works!</p>
+<h3>Add Product Reactive Form</h3>
+<form [formGroup]="productAddForm" (ngSubmit)="addProduct()" autocomplete="off">
+
+    <div class="form-group">
+        <input type="text" id="name"  name="name" formControlName="name" placeholder="Product Name" class="form-control">
+        <div class="alert alert-dark" *ngIf="productAddForm.get('name')?.hasError('required') && productAddForm.get('name')?.dirty">
+            Product Name Required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="text" id="description" name="description" formControlName="description" placeholder="Description" class="form-control">
+        <div class="alert alert-dark" *ngIf="productAddForm.get('description')?.hasError('required') && productAddForm.get('description')?.dirty">
+            Product Name Required
+        </div>
+    </div>
+
+    <div class="form-group" >
+        <input type="text" id="price" name="price" formControlName="price" placeholder="Price" class="form-control">
+        <div class="alert alert-dark" *ngIf="productAddForm.get('price')?.hasError('required') && productAddForm.get('price')?.dirty">
+            Price Required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="text" id="imageUrl" name="imageUrl" formControlName="imageUrl" placeholder="ImageUrl" class="form-control">
+        <div class="alert alert-dark" *ngIf="productAddForm.get('imageUrl')?.hasError('required') && productAddForm.get('imageUrl')?.dirty">
+            Product Name Required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <select class="form-control" formControlName="categoryId" (change)="test($event)" >
+            <option value="">Please select a Category</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+    </div>
+    
+    <button *ngIf="productAddForm.get('name')?.valid" type="submit" class="btn btn-primary" [disabled]="productAddForm.invalid">Add Product as {{productAddForm.get('name')?.value}} </button>
+</form>

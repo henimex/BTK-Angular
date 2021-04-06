@@ -1,0 +1,12 @@
+<p>category-add works!</p>
+<h3>Add New Category</h3>
+<form [formGroup]="categoryAddForm" (ngSubmit)="addCategory()" autocomplete="off">
+    <div class="form-group">
+        <input type="text" class="form-control" id="name" formControlName="name" placeholder="Category Name">
+        <div class="alert alert-dark" *ngIf="categoryAddForm.get('name')?.hasError('required') && categoryAddForm.get('name')?.dirty">
+            Category Name Required
+        </div>
+    </div>
+
+    <button *ngIf="categoryAddForm.get('name')?.valid" type="submit" class="btn btn-primary" [disabled]="categoryAddForm.invalid"> Add Category as {{categoryAddForm.get('name')?.value}}</button>
+</form>

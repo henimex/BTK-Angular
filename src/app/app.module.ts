@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,7 @@ import { ProductFilterPipe } from './products/product-filter.pipe';
 import { ProductAddForms1Component } from './products/product-add-forms1/product-add-forms1.component';
 import { ProductAddForms2Component } from './products/product-add-forms2/product-add-forms2.component';
 import { AlertifyService } from './services/alertify.service';
+import { CategoryAddComponent } from './category/category-add/category-add.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,16 @@ import { AlertifyService } from './services/alertify.service';
     ProductsComponent,
     ProductFilterPipe,
     ProductAddForms1Component,
-    ProductAddForms2Component
+    ProductAddForms2Component,
+    CategoryAddComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [AlertifyService],
   bootstrap: [AppComponent],
 })

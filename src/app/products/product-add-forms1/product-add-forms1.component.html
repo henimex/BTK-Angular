@@ -31,8 +31,12 @@
   <!-- Button and Small 2WayBinded Information -->
   <button *ngIf="model.name" id="btnAdd" type="submit" class="btn btn-primary" [disabled]="productAddForm.invalid">Add {{model.name}}</button>
   <small *ngIf="model.price" id="lblInfo" class="form-text"> Add <strong>{{model.name}}</strong> for <strong>{{model.price}} TL</strong> </small>
-
-
-
-
 </form>
+
+
+<!-- #price="ngModel" Validasyon icin ngModel a yani component icrerisindeki yer ile ilişkilendiriliyor ama sadece kontrol amaclı -->
+<!-- [(ngModel)]="model.price" ise tamamen iki yonlu olarak component ve htmli birbiriyle eslestiriyor. bi sekilde componenetten gonderilen deger htmldeki alanı yada html deki alanda componentteki degeri anlık degistiriyor. -->
+<!-- name="price" id="price" tam olarak nerde ne zaman kullanılması gerektigi hakkında fikrim yok henüz -->
+<!-- Select option icerisinde Binding yaparken donguyu standart yapıyoruz deger olarak belirtilecek yer [value] ve bu value de belirtilen alan ngModelde de tanımlanıyor. Gösterilecek alan ise standart {{}} ile gosteriliyor. -->
+<!-- 25. ve 26. satır onemli -->
+<!-- ngModel baglaması div baslangıcı gibi select icerisinde gösterilecek yer ve value alanı ise options icerisinde gosterilir. -->

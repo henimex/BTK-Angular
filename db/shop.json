@@ -71,6 +71,22 @@
       "categoryId": 4,
       "description": "MSI 27 165 HZ Curved VA",
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/61aWLD-bTRL._AC_SX569_.jpg"
+    },
+    {
+      "description": "Core Series SX Gaming Chair - Red",
+      "imageUrl": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6215/6215627_sd.jpg;maxHeight=640;maxWidth=550",
+      "name": "Akracing Chair",
+      "price": "2100",
+      "categoryId": "12",
+      "id": 10
+    },
+    {
+      "name": "SteelSeries - Stratus Duo Wireless Gaming Controller",
+      "price": "44.99",
+      "categoryId": "10",
+      "description": "Windows, Android, and Select VR Headsets",
+      "imageUrl": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6319/6319150_sd.jpg;maxHeight=640;maxWidth=550",
+      "id": 11
     }
   ],
   "Categories": [
@@ -106,9 +122,33 @@
       "id": 8,
       "name": "Cooling"
     },
-	{
+    {
       "id": 9,
       "name": "Accessories"
+    },
+    {
+      "id": 10,
+      "name": "Others"
+    },
+    {
+      "id": 11,
+      "name": "Stream"
+    },
+    {
+      "id": 12,
+      "name": "Chairs"
+    },
+    {
+      "id": 13,
+      "name": "Tables"
+    },
+    {
+      "name": "RGB Series",
+      "id": 14
+    },
+    {
+      "name": "Sound Systems",
+      "id": 15
     }
   ]
 }
