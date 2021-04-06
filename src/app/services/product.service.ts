@@ -14,7 +14,7 @@ export class ProductService {
     if (categoryId) { newPath += "?categoryId=" + categoryId };
     return this.http.get<Product[]>(newPath)
     .pipe(
-      tap((data) => console.log(/*JSON.stringify(data))*/ "Veriler Listelendi")),
+      tap((data) => console.log(/*JSON.stringify(data))*/ "3 Loglama Mantıgı : Tap Veriler Listelendi")),
       catchError(this.handleError)
     )
   }
@@ -28,7 +28,7 @@ export class ProductService {
     }
     return this.http.post<Product>(this.path, product, httpOptions)
     .pipe(
-      tap((data) => console.log(/*JSON.stringify(data))*/ "Veriler Listelendi")),
+      tap((data) => console.log(/*JSON.stringify(data))*/ "2 Loglama Mantıgı : Tap Veriler Listelendi")),
       catchError(this.handleError)
     )
   }

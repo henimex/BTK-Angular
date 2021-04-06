@@ -12,7 +12,7 @@ export class CategoryService {
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(this.path)
     .pipe(
-      tap((data) => console.log(/*JSON.stringify(data))*/ "Veriler Listelendi")),
+      tap((data) => console.log(/*JSON.stringify(data))*/ "1 Loglama Mantıgı : Tap Veriler Listelendi")),
       catchError(this.handleError)
     )
   }
