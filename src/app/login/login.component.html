@@ -1,15 +1,15 @@
 <body class="text-center">
     <main class="form-signin">
-        <form>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
             <img class="mb-4" src="https://thekey.me/cas/themes/thekey/images/thekey.png" alt="" width="72" height="72">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
+                <input type="text" class="form-control" #userName="ngModel" [(ngModel)]="model.userName" id="username" placeholder="Username" name="userName" required autofocus>
+                <label for="floatingInput">User Name</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control"  #password="ngModel" [(ngModel)]="model.password" id="password" placeholder="Password" name="password" required>
                 <label for="floatingPassword">Password</label>
             </div>
 

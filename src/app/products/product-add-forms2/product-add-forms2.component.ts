@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Category } from 'src/app/category/category';
+import { Category } from 'src/app/models/category';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
-import { Product } from '../product';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-product-add-forms2',

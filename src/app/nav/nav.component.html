@@ -44,8 +44,11 @@
 
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" routerLink="/login">
+      <a *ngIf="isLoggedIn()==false" roterLink="/login" class="nav-link" routerLink="/login">
         Login
+      </a>
+      <a *ngIf="isLoggedIn()==true" class="nav-link" routerLink="/login" (click)="logout()">
+        Logout
       </a>
     </li>
   </ul>

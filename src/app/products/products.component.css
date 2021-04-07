@@ -5,6 +5,8 @@ img{
     width: 250px;
     height: 250px;
     object-fit: scale-down;
-
-    
 }
+h5 {
+    word-wrap: break-word;
+    width: 300px;
+ }

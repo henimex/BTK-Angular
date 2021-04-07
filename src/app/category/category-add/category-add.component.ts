@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertifyService } from 'src/app/services/alertify.service';
 import { CategoryService } from 'src/app/services/category.service';
-import { Category } from '../category';
+import { Category } from '../../models/category';
 
 @Component({
   selector: 'app-category-add',
